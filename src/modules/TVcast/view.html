@@ -1,5 +1,10 @@
-<div ng-repeat="cast in channel[0].TVcasts | orderBy:'endAt'">
-	<h1>{{cast.name}}</h1>
-	<span>{{cast.startAt}} &mdash; {{cast.endAt}}</span>
-	<span>{{cast.disscussionID}}</span>
+<div class="panel panel-default">
+    <div class="panel-heading">Программа передач</div>
+    <div class="panel-body">
+        <div ng-repeat="cast in channel[0].TVcasts | orderBy:'endAt'">
+            <h1>{{cast.name}}</h1>
+            <span>{{cast.startAt}} &mdash; {{cast.endAt}}</span>
+            <span>{{cast.disscussionID}}</span>
+        </div>
+    </div>
 </div>
