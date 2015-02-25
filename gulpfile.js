@@ -52,7 +52,7 @@ var path = {
 		],
 		ngHtml: 'src/modules/**/*.html',
 		style: [
-			'src/style/main.*ss',
+			'src/style/*.*ss',
 			'src/modules/**/*.*ss'
 		]
 	},
