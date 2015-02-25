@@ -138,7 +138,7 @@ gulp.task('build', [
 
 gulp.task('watch', function(){
 	watch(path.watch.style, function(event, cb) {
-		gulp.start('style:build');
+		gulp.start('css:build');
 	});
 	watch(path.watch.js, function(event, cb) {
 		gulp.start('js:build');
