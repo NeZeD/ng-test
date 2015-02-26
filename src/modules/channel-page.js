@@ -1,3 +1,3 @@
 (function(){
-	angular.module('channel-page', ['ChannelAPI']);
+	angular.module('channel-page', ['ChannelAPI', 'ngAnimate', 'mgcrea.ngStrap']);
 })();
