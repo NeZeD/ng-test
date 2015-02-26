@@ -27,7 +27,8 @@ var path = {
 		css: {
 			dist: 'build/css',
 			file: 'main.css'
-		}
+		},
+		fonts: 'build/fonts/'
 	},
 
 	src: {
@@ -41,6 +42,9 @@ var path = {
 		style: [
 			'src/style/main.*ss',
 			'src/modules/**/*.*ss'
+		],
+		fonts: [
+			'bower_components/font-awesome/fonts/*.*'
 		]
 	},
 
@@ -54,7 +58,8 @@ var path = {
 		style: [
 			'src/style/*.*ss',
 			'src/modules/**/*.*ss'
-		]
+		],
+		fonts: 'bower_components/**/fonts/*.*'
 	},
 
 	clean: './build'
@@ -129,10 +134,16 @@ gulp.task('css:build', function () {
 		.pipe( connect.reload() );
 });
 
+gulp.task('fonts:build', function () {
+	gulp.src( path.src.fonts )
+		.pipe( gulp.dest( path.build.fonts ) );
+});
+
 gulp.task('build', [
 	'css:build',
 	'js:build',
 	'ngHtml:build',
+	'fonts:build',
 	'html:build'
 ]);
 
@@ -148,6 +159,9 @@ gulp.task('watch', function(){
 	});
 	watch([path.watch.html], function(event, cb) {
 		gulp.start('html:build');
+	});
+	watch([path.watch.fonts], function(event, cb) {
+		gulp.start('fonts:build');
 	});
 });
 
