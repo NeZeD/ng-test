@@ -1,0 +1,25 @@
+<div class="popover" tabindex="-1" ng-controller="UserNavPopoverController">
+    <div class="arrow"></div>
+    <div class="popover-title">
+        <span class="pull-left">Сообщения ({{dialogs[0].unread}})</span>
+        <div class="text-right">
+            <a href="#">Отметить все как прочитанные</a>
+            <a href="#" class="text-muted">Написать новое сообщение</a>
+        </div>
+    </div>
+    <div class="popover-content">
+
+        <div class="msg clearfix {{ (d.unreaded && !d.out) ? 'bg-info' : '' }}" ng-repeat="d in dialogs[0].dialogs">
+
+            <i class="text-primary pull-right fa fa-circle{{ (d.unreaded && !d.out) ? '' : '-o' }}"></i>
+            <img class="upic pull-left" src="{{d.user.upic}}" />
+
+            <div class="msg-inner">
+                <h4>{{d.user.firstName}} {{d.user.lastName}}</h4>
+                <p class="{{ (d.unreaded && d.out) ? 'bg-info' : '' }}">{{d.message}}</p>
+                <small>{{(d.date * 1000) | date: 'dd-MM-yy HH:mm'}}</small>
+            </div>
+
+        </div>
+    </div>
+</div>
