@@ -1,0 +1,22 @@
+<div class="panel panel-default" ng-repeat="discussion in discussions | orderBy:'TVcast.endAt'">
+    <div class="panel-heading">Обсуждение передачи "{{discussion.TVcast.name}}" за {{discussion.TVcast.startAt * 1000 | date: 'dd-MM-yy'}}</div>
+    <div class="panel-body msg clearfix" ng-repeat="post in discussion.posts">
+        <div>
+            <img class="upic pull-left" src="{{post.user.upic}}" />
+            <div class="msg-inner">
+                <h4>{{post.user.firstName}} {{post.user.lastName}}</h4>
+                <p>{{post.message}}</p>
+                <small>{{ (post.time || 0) * 1000 | date: 'dd-MM-yy HH:mm'}}</small>
+                <div>
+                    {{post.likes.count}} <i class="fa fa-thumbs-o-up fa-fw" ng-click="like(discussion, post)"></i>
+                    {{post.dislikes}} <i class="fa fa-thumbs-o-down fa-fw" ng-click="dislike(discussion, post)"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="text-right">
+        <textarea class="form-control" placeholder="Обсудите это!" ng-model="tplComment"></textarea>
+        <button class="btn" ng-click="comment(discussion, this)">Отправить</button>
+    </div>
+</div>

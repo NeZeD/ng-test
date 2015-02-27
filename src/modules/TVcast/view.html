@@ -1,10 +1,17 @@
 <div class="panel panel-default">
     <div class="panel-heading">Программа передач</div>
     <div class="panel-body">
-        <div ng-repeat="cast in channel[0].TVcasts | orderBy:'endAt'">
-            <h1>{{cast.name}}</h1>
-            <span>{{cast.startAt}} &mdash; {{cast.endAt}}</span>
+        <div class="clearfix" ng-repeat="cast in channel.TVcasts | orderBy:'endAt'">
+            <small>{{cast.startAt | date: 'dd HH:mm'}} &mdash; {{cast.endAt | date: 'dd HH:mm'}}</small>
+            <h3>{{cast.name}}</h3>
             <span>{{cast.disscussionID}}</span>
+            <span class="btn btn-success pull-right" ng-if="cast.onAir">
+                <i class="fa fa-play"></i>
+            </span>
+            <button class="btn discussion-open pull-right" ng-click="discussionOpen(cast)">
+                <i class="fa fa-users fa-fw"></i>
+            </button>
+            <p>{{cast.description}}</p>
         </div>
     </div>
 </div>

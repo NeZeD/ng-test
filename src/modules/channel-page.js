@@ -6,6 +6,7 @@
             'UserAPI',
             'DialogsAPI',
             'PubSub',
+            'DiscussionsAPI',
 
             'ngAnimate',
             'mgcrea.ngStrap',
