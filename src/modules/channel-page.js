@@ -1,3 +1,14 @@
 (function(){
-    angular.module('channel-page', ['ChannelAPI', 'UserAPI', 'DialogsAPI', 'ngAnimate', 'mgcrea.ngStrap', 'ngSanitize']);
+    angular.module(
+        'channel-page',
+        [
+            'ChannelAPI',
+            'UserAPI',
+            'DialogsAPI',
+            'PubSub',
+
+            'ngAnimate',
+            'mgcrea.ngStrap',
+            'ngSanitize'
+        ]);
 })();
