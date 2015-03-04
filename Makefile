@@ -9,4 +9,4 @@ install:
 	sudo npm i -g gulp && \
 	sudo npm i -g protractor && \
 	bower i && \
-	sudo webdriver-manager update --standalone
+	sudo webdriver-manager update --standalone --ie
