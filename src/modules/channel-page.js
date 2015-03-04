@@ -7,6 +7,7 @@
             'DialogsAPI',
             'PubSub',
             'DiscussionsAPI',
+            'WeeklyStatAPI',
 
             'ngAnimate',
             'mgcrea.ngStrap',

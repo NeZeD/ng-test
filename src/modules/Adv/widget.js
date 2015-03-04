@@ -1,9 +1,9 @@
 (function(){
 	angular.module('channel-page')
-		.directive('footer', function(){
+		.directive('adv', function(){
 			return {
 				restrict: 'E',
-				templateUrl: 'Footer/view.html'
+				templateUrl: 'Adv/view.html'
 			}
 		});
 })();
